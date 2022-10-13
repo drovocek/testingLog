@@ -1,4 +1,4 @@
-package ru.rusoft.testinglog.controller;
+package ru.rusoft.testinglog.web.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

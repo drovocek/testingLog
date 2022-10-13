@@ -16,6 +16,7 @@ import java.util.Objects;
 public class TestInfo {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     @Column(name = "TITLE", unique = true, nullable = false)

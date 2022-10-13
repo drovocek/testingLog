@@ -1,33 +1,36 @@
 package ru.rusoft.testinglog.data.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
 @Entity
 @Table(name = "EXERCISE")
 public class Exercise {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     @Column(name = "TITLE", unique = true, nullable = false)
     private String title;
 
-    @Column(name = "DESCRIPTION", unique = true, nullable = false)
+    @Column(name = "DESCRIPTION", nullable = false)
     private String description;
 
-    @Column(name = "COMPLEXITY", unique = true, nullable = false)
+    @Column(name = "COMPLEXITY", nullable = false)
     private Integer complexity;
+
+    public Exercise(String title, String description, Integer complexity) {
+        this.title = title;
+        this.description = description;
+        this.complexity = complexity;
+    }
 
     @Override
     public int hashCode() {
