@@ -12,8 +12,8 @@ import java.util.Objects;
 @Setter
 @ToString(exclude = "exercises")
 @Entity
-@Table(name = "TEST_DESCRIPTION")
-public class TestDescription {
+@Table(name = "TEST_INFO")
+public class TestInfo {
 
     @Id
     private Long id;
@@ -28,8 +28,8 @@ public class TestDescription {
     private int complexity;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "TEST_DESCRIPTION_EXERCISE",
-            joinColumns = @JoinColumn(name = "TEST_DESCRIPTION_ID"),
+    @JoinTable(name = "TEST_INFO_EXERCISE",
+            joinColumns = @JoinColumn(name = "TEST_INFO_ID"),
             inverseJoinColumns = @JoinColumn(name = "EXERCISE_ID"))
     private List<Exercise> exercises;
 
@@ -49,7 +49,7 @@ public class TestDescription {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TestDescription that = (TestDescription) o;
+        TestInfo that = (TestInfo) o;
         return id.equals(that.id) && title.equals(that.title) && description.equals(that.description) && Objects.equals(complexity, that.complexity) && Objects.equals(exercises, that.exercises);
     }
 }

@@ -3,12 +3,12 @@ INSERT INTO EXERCISE (id, title, description, complexity) VALUES
 (2, 'Присядания','Сгибание ног стоя',2),
 (3, 'Подтягивания','Поднимание тела к перекладине',3);
 
-INSERT INTO TEST_DESCRIPTION (id, title, description) VALUES
+INSERT INTO TEST_INFO (id, title, description) VALUES
 (1, 'Тест_1','Легкий'),
 (2, 'Тест_2','Средний'),
 (3, 'Тест_3','Тяжелый');
 
-INSERT INTO TEST_DESCRIPTION_EXERCISE (test_description_id, exercise_id) VALUES
+INSERT INTO TEST_INFO_EXERCISE (test_info_id, exercise_id) VALUES
 (1, 1),
 (2, 1),
 (2, 2),
