@@ -1,6 +1,7 @@
 package ru.rusoft.testinglog.data.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -11,6 +12,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString(exclude = "exercises")
+@NoArgsConstructor
 @Entity
 @Table(name = "TEST_INFO")
 public class TestInfo {
@@ -39,6 +41,11 @@ public class TestInfo {
         this.complexity = this.exercises.stream()
                 .mapToInt(Exercise::getComplexity)
                 .sum() / this.exercises.size();
+    }
+
+    public TestInfo(String title, String description) {
+        this.title = title;
+        this.description = description;
     }
 
     @Override
