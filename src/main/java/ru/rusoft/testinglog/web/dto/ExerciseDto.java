@@ -1,4 +1,4 @@
 package ru.rusoft.testinglog.web.dto;
 
-public record ExerciseDto(String title, String description, Integer complexity) {
+public record ExerciseDto(Long id, String title, String description, Integer complexity) {
 }

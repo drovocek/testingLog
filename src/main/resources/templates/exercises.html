@@ -6,11 +6,11 @@
 <div class="page-body">
     <nav th:insert="~{/fragments/navbar.html :: navbar}"></nav>
     <h3>Упражнения:</h3>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exercisesAddForm">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDialog">
         Добавить
     </button>
 
-    <table class="table">
+    <table class="table" id="table">
         <thead>
         <tr>
             <th>Название</th>
@@ -28,7 +28,7 @@
     </table>
 </div>
 
-<div class="modal fade" id="exercisesAddForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addDialog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -36,7 +36,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="exercises" method="post" id="exercisesForm">
+                <form id="addForm">
                     <div class="form-group">
                         <label for="title">Название</label>
                         <input name="title" type="text" class="form-control" id="title" required>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                        <button type="submit" class="btn btn-primary">Добавить</button>
+                        <button type="button" class="btn btn-primary" onclick="save('/api/exercises')">Добавить</button>
                     </div>
                 </form>
             </div>
